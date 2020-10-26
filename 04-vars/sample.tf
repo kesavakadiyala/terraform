@@ -21,13 +21,11 @@ output "color" {
 }
 
 output "colorcode" {
-  depends_on = [var.color]
   description = "Accessing Number Variable"
   value = var.colorcode
 }
 
 output "bool" {
-  depends_on = [var.color]
   description = "Accessing Booloean Variable"
   value = var.bool
 }
