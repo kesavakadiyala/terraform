@@ -27,6 +27,7 @@ output "colorcode" {
 }
 
 output "bool" {
+  depends_on = [var.color]
   description = "Accessing Booloean Variable"
   value = var.bool
 }
