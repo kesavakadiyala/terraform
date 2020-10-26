@@ -21,7 +21,7 @@ output "color" {
 }
 
 output "colorcode" {
-  depends_on = var.color
+  depends_on = [var.color]
   description = "Accessing Number Variable"
   value = var.colorcode
 }
