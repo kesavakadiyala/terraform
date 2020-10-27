@@ -13,7 +13,7 @@ resource "aws_eip" "nat" {
 
 resource "aws_nat_gateway" "ngw" {
   count             = length(aws_subnet.public_subnet.*.id)
-  allocation_id     = aws_eip.nat.id
+  allocation_id     = element(aws_eip.nat.*.id, count.index)
   subnet_id         = element(aws_subnet.public_subnet.*.id, count.index)
   tags              = {
     Name            = "Nat-Gateway${count.index}"
