@@ -20,7 +20,7 @@ resource "aws_route_table" "private" {
   count             = length(aws_nat_gateway.ngw.*.id)
   vpc_id            = aws_vpc.main.id
   route {
-    gateway_id      = element(aws_nat_gateway.ngw.id, count.index)
+    gateway_id      = element(aws_nat_gateway.ngw.*.id, count.index)
   }
   tags              = {
     Name            = "Private-route-table${count.index}"
