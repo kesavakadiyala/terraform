@@ -20,6 +20,7 @@ resource "aws_route_table" "private" {
   count             = length(aws_nat_gateway.ngw.*.id)
   vpc_id            = aws_vpc.main.id
   route {
+    cidr_block      = var.IGW_CIDR
     gateway_id      = element(aws_nat_gateway.ngw.*.id, count.index)
   }
   tags              = {
