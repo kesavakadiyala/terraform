@@ -52,7 +52,9 @@ output "COLOR_FROM_MAP" {
 }
 
 // Access variables from shell environment variables
-
+// export TF_VAR_FRUIT_NAME=Apple  or
+// terraform apply -auto=-approve -var FRUIT_NAME=Banana  or
+// terraform apply -auto=-approve -var-file=vars.tfvars
 variable "FRUIT_NAME" {}
 
 output "FRUIT_NAME" {
