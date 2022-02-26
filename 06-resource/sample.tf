@@ -17,9 +17,9 @@ resource "aws_instance" "sample" {
       host = self.public_ip
       user = "root"
       password = "DevOps321"
-    }
-    inline = [
-      "yum install nginx -y "
+      }
+      inline = [
+        "yum install nginx -y "
     ]
 
   }
